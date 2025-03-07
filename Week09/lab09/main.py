@@ -17,7 +17,8 @@ input_valid = False
 # Loop to get valid input for Hero Combat Strength
 i = 0
 while not input_valid and i in range(5):
-    combat_strength = input("Enter your combat Strength (1-6): ")
+    try:
+       combat_strength = input("Enter your combat Strength (1-6): ")
 
     # Validate input: Check if the string inputted is numeric
     if not combat_strength.isnumeric():
@@ -33,6 +34,8 @@ while not input_valid and i in range(5):
 
     else:
         input_valid = True
+    except ValueError:
+       print("Exception: Invaild Input. Use Integer values!")
 
 m_input_valid = False
 
